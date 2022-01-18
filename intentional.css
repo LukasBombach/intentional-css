@@ -1,17 +1,35 @@
-.center\:vertical {
-}
-.center\:horizontal {
+/* noop */
+.pos\:x\:left {
 }
 
-.pos\:top {
+/* css-grid or css-flex */
+.pos\:x\:center {
 }
-.pos\:left {
+
+.pos\:x\:right {
+  position: absolute;
+  right: 0;
 }
-.pos\:bottom {
+
+/* noop */
+.pos\:y\:top {
 }
-.pos\:right {
+
+/* css-grid or css-flex */
+.pos\:y\:center {
 }
-.pos\:v-center {
+
+.pos\:y\:bottom {
+  position: absolute;
+  bottom: 0;
 }
-.pos\:h-center {
+
+.pos\:x\:abs {
+  position: absolute;
+  left: var(--pos-x-abs);
+}
+
+.pos\:y\:abs {
+  position: absolute;
+  top: var(--pos-y-abs);
 }
