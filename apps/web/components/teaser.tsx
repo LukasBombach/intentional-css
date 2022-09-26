@@ -1,3 +1,5 @@
+export {};
+
 type ReactComponent = () => JSX.Element;
 
 interface Component extends ReactComponent {
@@ -8,8 +10,32 @@ interface Component extends ReactComponent {
 }
 
 function component(): Component {}
+function layout(...args: any[]): any {}
+function text(...args: any[]): any {}
 
 const Teaser = component().layout().text().tracking().seo();
+
+const stack = layout`
+  display: layout(stack);
+  --rows: min-content 1rem 3rem 24px;
+  --gap: var(--sm);
+`;
+
+const twoCols = layout`
+  display: layout(columns);
+  --cols: 168px 1fr;
+  --gap: var(--md);
+`;
+
+const headline = text`
+  font-family: var(--text-sans);
+  font-weight:  var(--text-bold);
+  font-size: var(--text-14);
+  line-height: var(--line-120);
+  color: var(--color-salems-fur);
+`;
+
+/*
 
 const Layout = component().layout`
   rows:
@@ -29,3 +55,10 @@ const Layout = component().layout`
 `;
 
 const Layout2 = component().layout("vstack", {});
+
+const stack = (props: { gap: any }) => `
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: ${props.gap} 0;
+`;
+*/
